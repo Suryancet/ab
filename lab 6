@@ -1,0 +1,143 @@
+lab 6
+ 
+1st xml code 
+
+<?xml version="1.0" encoding="utf-8"?> 
+<androidx.constraintlayout.widget.ConstraintLayout 
+xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent" 
+    android:background="#44ccdd" 
+    android:layout_height="match_parent" 
+    tools:context=".MainActivity"> 
+ 
+    <TextView 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:text="LOGIN ACTIVITY" 
+        android:textStyle="italic" 
+        android:textColor="#444" 
+        android:textSize="48sp" 
+        app:layout_constraintBottom_toBottomOf="parent" 
+        app:layout_constraintEnd_toEndOf="parent" 
+        app:layout_constraintStart_toStartOf="parent" 
+        app:layout_constraintTop_toTopOf="parent" 
+        app:layout_constraintVertical_bias="0.094" /> 
+ 
+    <EditText 
+        android:id="@+id/e1" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:ems="10" 
+        android:hint="USER NAME:" 
+        android:inputType="textPersonName" 
+        android:text="" 
+        app:layout_constraintBottom_toBottomOf="parent" 
+        app:layout_constraintEnd_toEndOf="parent" 
+        app:layout_constraintHorizontal_bias="0.427" 
+        app:layout_constraintStart_toStartOf="parent" 
+        app:layout_constraintTop_toTopOf="parent" 
+        app:layout_constraintVertical_bias="0.502" /> 
+ 
+    <EditText 
+        android:id="@+id/e2" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:ems="10" 
+        android:hint="PASSWORD:" 
+        android:inputType="textPassword" 
+        app:layout_constraintBottom_toBottomOf="parent" 
+        app:layout_constraintEnd_toEndOf="parent" 
+        app:layout_constraintHorizontal_bias="0.402" 
+        app:layout_constraintStart_toStartOf="parent" 
+        app:layout_constraintTop_toTopOf="parent" 
+        app:layout_constraintVertical_bias="0.568" /> 
+<Button 
+android:id="@+id/button" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:onClick="Dosomething" 
+android:text="LOGIN " 
+app:layout_constraintBottom_toBottomOf="parent" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.498" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent" 
+app:layout_constraintVertical_bias="0.673" /> 
+</androidx.constraintlayout.widget.ConstraintLayout> 
+
+
+1st java code 
+
+
+package com.example.gagan_050_6; 
+import androidx.appcompat.app.AppCompatActivity; 
+import android.content.Intent; 
+import android.os.Bundle; 
+import android.view.View; 
+import android.widget.EditText; 
+import android.widget.Toast; 
+public class MainActivity extends AppCompatActivity { 
+EditText edt1,edt2; 
+@Override 
+protected void onCreate(Bundle savedInstanceState) { 
+super.onCreate(savedInstanceState); 
+setContentView(R.layout.activity_main); 
+edt1=(EditText) findViewById(R.id.e1); 
+edt2=(EditText) findViewById(R.id.e2); 
+} 
+public void Dosomething(View view) { 
+if(edt1.getText().toString().equals("Admin")&& 
+edt2.getText().toString().equals("Gagan@2004")) 
+{ 
+Intent i1=new Intent(this,second.class); 
+startActivity(i1); 
+} 
+else 
+{ 
+Toast.makeText(this, "login unsuccesfull", 
+Toast.LENGTH_SHORT).show(); 
+} 
+} 
+} 
+
+
+2nd xml  code
+ 
+<?xml version="1.0" encoding="utf-8"?> 
+<androidx.constraintlayout.widget.ConstraintLayout 
+xmlns:android="http://schemas.android.com/apk/res/android" 
+xmlns:app="http://schemas.android.com/apk/res-auto" 
+xmlns:tools="http://schemas.android.com/tools" 
+android:layout_width="match_parent" 
+android:layout_height="match_parent" 
+android:background="#44ccdd" 
+tools:context=".second"> 
+<TextView 
+android:id="@+id/textView" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:text="WELCOME" 
+android:textColor="#9C27B0" 
+android:textSize="34sp" 
+android:textStyle="italic" 
+app:layout_constraintBottom_toBottomOf="parent" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.5" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent" /> 
+</androidx.constraintlayout.widget.ConstraintLayout> 
+
+2nd java code 
+
+package com.example.gagan_050_6; 
+import androidx.appcompat.app.AppCompatActivity; 
+import android.os.Bundle; 
+public class second extends AppCompatActivity { 
+@Override 
+protected void onCreate(Bundle savedInstanceState) { 
+super.onCreate(savedInstanceState); 
+setContentView(R.layout.activity_second); 
+} 
+} 
