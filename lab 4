@@ -1,0 +1,132 @@
+lab 4
+
+ 1ST MAIN XML 
+
+<?xml version="1.0" encoding="utf-8"?> 
+<androidx.constraintlayout.widget.ConstraintLayout 
+xmlns:android="http://schemas.android.com/apk/res/android" 
+xmlns:app="http://schemas.android.com/apk/res-auto" 
+xmlns:tools="http://schemas.android.com/tools" 
+android:layout_width="match_parent" 
+android:layout_height="match_parent" 
+android:background="#4D64" 
+tools:context=".MainActivity"> 
+<TextView 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:text="Explicit intent" 
+android:textSize="30sp" 
+android:textColor="#050" 
+app:layout_constraintBottom_toBottomOf="parent" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.425" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent" 
+app:layout_constraintVertical_bias="0.068" /> 
+<Button 
+android:id="@+id/button" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:onClick="GAGAN" 
+android:text="Button" 
+app:layout_constraintBottom_toBottomOf="parent" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.438" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent" 
+app:layout_constraintVertical_bias="0.306" /> 
+<EditText 
+android:id="@+id/e1" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:ems="10" 
+android:hint="Enter the data" 
+android:inputType="textPersonName" 
+app:layout_constraintBottom_toBottomOf="parent" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.5" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent" /> 
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+ 
+
+ 1ST MAIN JAVA 
+
+package com.example.gagan; 
+import androidx.appcompat.app.AppCompatActivity; 
+import android.content.Intent; 
+import android.os.Bundle; 
+import android.view.View; 
+import android.widget.EditText; 
+public class MainActivity extends AppCompatActivity { 
+EditText e; 
+@Override 
+protected void onCreate(Bundle savedInstanceState) { 
+super.onCreate(savedInstanceState); 
+setContentView(R.layout.activity_main); 
+e=(EditText) findViewById(R.id.e1); 
+} 
+public void GAGAN(View view) { 
+Intent i1= new Intent(this,second.class); 
+i1.putExtra("user",e.getText().toString()); 
+startActivity(i1); 
+} 
+} 
+
+
+ 2ND XML 
+
+<?xml version="1.0" encoding="utf-8"?> 
+<androidx.constraintlayout.widget.ConstraintLayout 
+xmlns:android="http://schemas.android.com/apk/res/android" 
+xmlns:app="http://schemas.android.com/apk/res-auto" 
+xmlns:tools="http://schemas.android.com/tools" 
+android:layout_width="match_parent" 
+android:layout_height="match_parent" 
+android:background="#1909" 
+tools:context=".second"> 
+<TextView 
+android:id="@+id/textView" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:text="second activity" 
+android:textSize="30sp" 
+android:textColor="#4D64B5" 
+app:layout_constraintBottom_toBottomOf="parent" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.498" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent" 
+app:layout_constraintVertical_bias="0.091" /> 
+<TextView 
+android:id="@+id/t1" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+app:layout_constraintBottom_toBottomOf="parent" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.498" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent" 
+app:layout_constraintVertical_bias="0.231" /> 
+</androidx.constraintlayout.widget.ConstraintLayout> 
+
+
+ 2ND JAVA 
+
+package com.example.gagan; 
+import androidx.appcompat.app.AppCompatActivity; 
+import android.os.Bundle; 
+import android.widget.TextView; 
+public class second extends AppCompatActivity { 
+TextView t; 
+@Override 
+protected void onCreate(Bundle savedInstanceState) { 
+super.onCreate(savedInstanceState); 
+setContentView(R.layout.activity_second); 
+t=(TextView)findViewById(R.id.t1); 
+Bundle b1= getIntent().getExtras(); 
+String s1=b1.getString("user"); 
+t.setText(s1); 
+} 
+} 
