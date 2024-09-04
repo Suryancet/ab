@@ -1,171 +1,180 @@
-lab 7
+XML
 
-Mainactivity.xml code
+
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4CAF50"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SIMPLE CALCULATOR"
-        android:textColor="#44c"
-        android:textSize="34sp"
-        android:textStyle="italic"
+        android:text="CALCULATOR"
+        android:textColorLink="#26008F"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.092" />
 
     <EditText
         android:id="@+id/e1"
-        android:layout_width="179dp"
-        android:layout_height="39dp"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
         android:ems="10"
-        android:hint="Number-1"
-        android:inputType="textPersonName"
-        android:textColor="#E000F8"
+        android:hint="NUMBER 1"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.315" />
+        app:layout_constraintVertical_bias="0.213" />
 
     <EditText
         android:id="@+id/e2"
-        android:layout_width="154dp"
-        android:layout_height="42dp"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
         android:ems="10"
-        android:hint="Number-2"
-        android:inputType="textPersonName"
-        android:textColor="#E000F8"
+        android:hint="NUMBER 2"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="0.865"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314" />
+        app:layout_constraintVertical_bias="0.213" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:onClick="add"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.439" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:onClick="sub"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.439" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:onClick="mul"
+        android:text="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.658"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.439" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:onClick="div"
+        android:text="/"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.439" />
 
     <TextView
         android:id="@+id/t1"
-        android:layout_width="91dp"
-        android:layout_height="49dp"
-        android:textSize="34sp"
-        android:textColor="#E000F8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="ADD"
-        android:text="+"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.648" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="SUD"
-        android:text="-"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.648" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="MUL"
-        android:text="*"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.843" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="DIV"
-        android:text="/"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.843" />
+        app:layout_constraintVertical_bias="0.325" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-Main activity.java
-package com.example.gagan_050_7;
 
-import androidx.appcompat.app.AppCompatActivity;
+JAVA
+
+package com.example.lab_7;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    EditText edt1,edt2;
-    TextView tv;
-    int no1,no2;
-
+    EditText ed1,ed2;
+    TextView t1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        edt1=(EditText)findViewById(R.id.e1);
-        edt2=(EditText) findViewById(R.id.e2);
-        tv=(TextView) findViewById(R.id.t1);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+        ed1=(EditText) findViewById(R.id.e1);
+        ed2=(EditText) findViewById(R.id.e2);
+        t1=(TextView) findViewById(R.id.t1);
+
+    }
+    public void add(View view){
+        double num1=Double.parseDouble(ed1.getText().toString());
+        double num2=Double.parseDouble(ed2.getText().toString());
+        t1.setText(String.valueOf(num1+num2));
+    }
+    public void sub(View view){
+        double num1=Double.parseDouble(ed1.getText().toString());
+        double num2=Double.parseDouble(ed2.getText().toString());
+        t1.setText(String.valueOf(num1-num2));
+    }
+    public void mul(View view){
+        double num1=Double.parseDouble(ed1.getText().toString());
+        double num2=Double.parseDouble(ed2.getText().toString());
+        t1.setText(String.valueOf(num1*num2));
+    }
+    public void div(View view) {
+        double num1 = Double.parseDouble(ed1.getText().toString());
+        double num2 = Double.parseDouble(ed2.getText().toString());
+        if (num2 == 0) {
+            Toast.makeText(this, "CANNOT DIVIDED BY ZERO", Toast.LENGTH_SHORT).show();
+        } else {
+            t1.setText(String.valueOf(num1 /num2));
+        }
     }
 
-    public void ADD(View view) {
-        no1=Integer.parseInt(edt1.getText().toString());
-        no2=Integer.parseInt(edt2.getText().toString());
-        tv.setText(String.valueOf(no1+no2));
-    }
-
-    public void SUD(View view) {
-        no1=Integer.parseInt(edt1.getText().toString());
-        no2=Integer.parseInt(edt2.getText().toString());
-        tv.setText(String.valueOf(no1-no2));
-    }
-
-    public void MUL(View view) {
-        no1=Integer.parseInt(edt1.getText().toString());
-        no2=Integer.parseInt(edt2.getText().toString());
-        tv.setText(String.valueOf(no1*no2));
-    }
-
-    public void DIV(View view) {
-        no1=Integer.parseInt(edt1.getText().toString());
-        no2=Integer.parseInt(edt2.getText().toString());
-        tv.setText(String.valueOf(no1/no2));
-    }
 }
 
