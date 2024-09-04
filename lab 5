@@ -1,93 +1,104 @@
-lab 5
- 
-Xml code 
-
-<?xml version="1.0" encoding="utf-8"?> 
-<androidx.constraintlayout.widget.ConstraintLayout 
-xmlns:android="http://schemas.android.com/apk/res/android" 
-xmlns:app="http://schemas.android.com/apk/res-auto" 
-xmlns:tools="http://schemas.android.com/tools" 
-android:layout_width="match_parent" 
-android:layout_height="match_parent" 
-android:background="#446633" 
-tools:context=".MainActivity"> 
-<TextView 
-android:layout_width="wrap_content" 
-android:layout_height="wrap_content" 
-android:text=" IMPLICIT INTENT" 
-android:textColor="@color/black" 
-android:textSize="34sp" 
-app:layout_constraintBottom_toBottomOf="parent" 
-app:layout_constraintEnd_toEndOf="parent" 
-app:layout_constraintStart_toStartOf="parent" 
-app:layout_constraintTop_toTopOf="parent" 
-app:layout_constraintVertical_bias="0.083" /> 
-<Button 
-android:id="@+id/B1" 
-android:layout_width="wrap_content" 
-android:layout_height="wrap_content" 
-android:text="OPEN WEB" 
-android:onClick="openweb" 
-app:layout_constraintBottom_toBottomOf="parent" 
-app:layout_constraintEnd_toEndOf="parent" 
-app:layout_constraintHorizontal_bias="0.505" 
-app:layout_constraintStart_toStartOf="parent" 
-app:layout_constraintTop_toTopOf="parent" 
-app:layout_constraintVertical_bias="0.338" /> 
-<Button 
-android:id="@+id/B2" 
-android:layout_width="wrap_content" 
-android:layout_height="wrap_content" 
-android:text="OPEN CALL" 
-android:onClick="opencall" 
-app:layout_constraintBottom_toBottomOf="parent" 
-app:layout_constraintEnd_toEndOf="parent" 
-app:layout_constraintHorizontal_bias="0.5" 
-app:layout_constraintStart_toStartOf="parent" 
-app:layout_constraintTop_toTopOf="parent" /> 
-<Button 
-android:id="@+id/B3" 
-android:layout_width="wrap_content" 
-android:layout_height="wrap_content" 
-android:text="OPEN MAP" 
-android:onClick="openmap" 
-app:layout_constraintBottom_toBottomOf="parent" 
-app:layout_constraintEnd_toEndOf="parent" 
-app:layout_constraintHorizontal_bias="0.498" 
-app:layout_constraintStart_toStartOf="parent" 
-app:layout_constraintTop_toTopOf="parent" 
-app:layout_constraintVertical_bias="0.666" /> 
-</androidx.constraintlayout.widget.ConstraintLayout> 
-
-Java code 
+xml
 
 
-package com.example.gagan_050; 
-import androidx.appcompat.app.AppCompatActivity; 
-import android.content.Intent; 
-import android.net.Uri; 
-import android.os.Bundle; 
-import android.view.View; 
-import java.net.URI; 
-public class MainActivity extends AppCompatActivity { 
-@Override 
-protected void onCreate(Bundle savedInstanceState) { 
-super.onCreate(savedInstanceState); 
-setContentView(R.layout.activity_main); 
-} 
-public void openweb(View view) { 
-Intent i1= new Intent(Intent.ACTION_VIEW , 
-Uri.parse("http://www.google.com")); 
-startActivity(i1); 
-} 
-public void opencall(View view) { 
-Intent i2= new Intent(Intent.ACTION_VIEW, 
-Uri.parse("tel:7996938958")); 
-startActivity(i2); 
-} 
-public void openmap(View view) { 
-Intent i3= new Intent(Intent.ACTION_VIEW, Uri.parse("geo:12.9716, 
-")); 
-} 
-startActivity(i3); 
-} 
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Implicit Intent"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.150" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="123dp"
+        android:layout_height="60dp"
+        android:text="Open web"
+        android:onClick="openweb"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.300" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="123dp"
+        android:layout_height="60dp"
+        android:text="Open call"
+        android:onClick="opencall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.450" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="123dp"
+        android:layout_height="60dp"
+        android:text="Open map"
+        android:onClick="openmap"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.600" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+java
+
+
+package com.example.lab_5;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
+    public void openweb(View view){
+        Intent i1=new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+        startActivity(i1);
+    }
+    public void opencall(View view){
+        Intent i1=new Intent(Intent.ACTION_VIEW, Uri.parse("tel:6363499434"));
+        startActivity(i1);
+    }
+    public void openmap(View view) {
+        Intent i1 = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:12.5244,76.8976")); // Latitude and Longitude for Mandya
+        startActivity(i1);
+    }
+}
